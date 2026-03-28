@@ -84,6 +84,15 @@
             width: 100%;
             border-radius: 10px;
             cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        
+        iframe {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
         
         footer {
@@ -104,6 +113,7 @@
         
         .modal img {
             max-width: 90%;
+            border-radius: 10px;
         }
         
         .close {
@@ -113,6 +123,15 @@
             font-size: 30px;
             color: white;
             cursor: pointer;
+        }
+        
+        @media(max-width:768px) {
+            .title {
+                font-size: 6vw;
+            }
+            header h1 {
+                font-size: 8vw;
+            }
         }
     </style>
 </head>
@@ -124,11 +143,31 @@
         <p>Ticket Booking | Train Management | Fare Inquiry</p>
     </header>
 
+    <!-- ✅ VIDEO FIRST -->
+    <section>
+        <h2 class="title">Project Demo</h2>
+
+        <iframe src="https://drive.google.com/file/d/1N8MMOwAw5OW5Gnzu351uLhPsr5XNk9Pc/preview" width="100%" height="500" loading="lazy" style="border-radius:10px;border:2px solid #ff6600;" allow="autoplay">
+    </iframe>
+
+        <div style="text-align:center;margin-top:10px;">
+            <a href="https://drive.google.com/file/d/1N8MMOwAw5OW5Gnzu351uLhPsr5XNk9Pc/preview" target="_blank" style="color:#ffcc00;">
+            Open Video in Full Screen
+        </a>
+        </div>
+    </section>
+    <section>
+        <h2 class="title">Screenshots</h2>
+        <div class="gallery">
+            <img src="sch.png">
+            <img src="sca.png">
+            <img src="scu.png">
+            <img src="sc.png">
+        </div>
+    </section>
     <section>
         <h2 class="title">Project Overview</h2>
-        <p>
-            Java + JSP + Oracle based railway booking system with Admin & User modules.
-        </p>
+        <p>Java + JSP + Oracle based railway booking system with Admin & User modules.</p>
     </section>
 
     <section>
@@ -166,32 +205,10 @@
         </div>
     </section>
 
-    <section>
-        <h2 class="title">Screenshots</h2>
-        <div class="gallery">
-            <img src="sch.png">
-            <img src="sca.png">
-            <img src="scu.png">
-            <img src="sc.png">
-        </div>
-    </section>
 
-    <!-- ✅ OPTIMIZED VIDEO -->
-    <section>
-        <h2 class="title">Project Demo</h2>
-
-        <iframe src="https://drive.google.com/file/d/1N8MMOwAw5OW5Gnzu351uLhPsr5XNk9Pc/preview" width="100%" height="500" loading="lazy" style="border-radius:10px;border:2px solid #ff6600;" allow="autoplay">
-    </iframe>
-
-        <div style="text-align:center;margin-top:10px;">
-            <a href="https://drive.google.com/file/d/1N8MMOwAw5OW5Gnzu351uLhPsr5XNk9Pc/preview" target="_blank">
-            Open Video in Full Screen
-        </a>
-        </div>
-    </section>
 
     <footer>
-        © 2026 Smart Rail Booking System
+        © 2026 Smart Rail Booking System -- Developed By Badrinath Gore
     </footer>
 
     <!-- MODAL -->
@@ -201,7 +218,6 @@
     </div>
 
     <script>
-        // Image Modal
         const modal = document.getElementById("modal");
         const modalImg = document.getElementById("modalImg");
 
@@ -216,18 +232,6 @@
 
         modal.onclick = e => {
             if (e.target === modal) modal.style.display = "none";
-        };
-
-        // Video Lazy Load
-        document.getElementById("preview").onclick = function() {
-            document.getElementById("video").innerHTML = `
-        <iframe 
-            src="https://drive.google.com/file/d/1N8MMOwAw5OW5Gnzu351uLhPsr5XNk9Pc/preview"
-            width="100%" height="500"
-            allow="autoplay">
-        </iframe>`;
-
-            this.style.display = "none";
         };
     </script>
 
