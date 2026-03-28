@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Rail Booking System</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        /* BODY */
+        
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+        }
+        /* HEADER */
+        
+        header {
+            background: linear-gradient(135deg, #ffcc00, #ff6600);
+            color: #000;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        header h1 {
+            font-size: 5vw;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-weight: bold;
+        }
+        /* SECTION */
+        
+        section {
+            padding: 50px 8%;
+        }
+        /* TITLE */
+        
+        .title {
+            font-size: 2.5vw;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            border-left: 5px solid #ff6600;
+            padding-left: 10px;
+        }
+        /* CARD GRID */
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        /* CARD */
+        
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ffcc00, #ff6600);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .card h3 {
+            color: #22c55e;
+            margin-bottom: 10px;
+        }
+        /* TECH */
+        
+        .tech ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            list-style: none;
+        }
+        
+        .tech li {
+            background: #334155;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #ffcc00;
+        }
+        /* GALLERY */
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 2px solid #ffcc00;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        /* VIDEO */
+        
+        video {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid #ff6600;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #ffcc00;
+            border-top: 2px solid #ff6600;
+        }
+        /* MODAL */
+        
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal img {
+            max-width: 90%;
+            border-radius: 10px;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
+        }
+        /* RESPONSIVE */
+        
+        @media(max-width:768px) {
+            .title {
+                font-size: 6vw;
+            }
+            header h1 {
+                font-size: 8vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🚆 Smart Indian Rail Booking System</h1>
+        <p>Smart Indian Rail Booking System with Admin & User Modules, Ticket Booking, Train Management, and Fare Inquiry.</p>
+    </header>
+
+    <section>
+        <h2 class="title">Project Overview</h2>
+        <p>
+            This system modernizes railway booking using Java, JSP, and Oracle Database. Users can search trains, book tickets, check fares, and manage profiles, while admin handles complete system operations.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="title">Admin Module</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Login</h3>
+                <p>Secure admin authentication</p>
+            </div>
+            <div class="card">
+                <h3>Add Train</h3>
+                <p>Add new train details</p>
+            </div>
+            <div class="card">
+                <h3>Update Train</h3>
+                <p>Edit schedules & routes</p>
+            </div>
+            <div class="card">
+                <h3>Delete Train</h3>
+                <p>Remove train data</p>
+            </div>
+            <div class="card">
+                <h3>Manage Users</h3>
+                <p>Control user accounts</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="title">User Module</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Register/Login</h3>
+                <p>User authentication system</p>
+            </div>
+            <div class="card">
+                <h3>Search Train</h3>
+                <p>Find trains between stations</p>
+            </div>
+            <div class="card">
+                <h3>Book Ticket</h3>
+                <p>Reserve seats online</p>
+            </div>
+            <div class="card">
+                <h3>Fare Inquiry</h3>
+                <p>Check ticket prices</p>
+            </div>
+            <div class="card">
+                <h3>Booking History</h3>
+                <p>Track past bookings</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="title">Technology Stack</h2>
+        <div class="tech">
+            <ul>
+                <li>Java</li>
+                <li>Servlet & JSP</li>
+                <li>Oracle DB</li>
+                <li>HTML CSS</li>
+                <li>Tomcat Server</li>
+                <li>Eclipse</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="title">Screenshots</h2>
+        <div class="gallery">
+            <img src="sch.png">
+            <img src="sca.png">
+            <img src="sch.png">
+            <img src="sc.png">
+        </div>
+    </section>
+
+    <section>
+        <h2 class="title">Project Demo</h2>
+        <video controls>
+<source src="sirbs.mp4" type="video/mp4">
+</video>
+    </section>
+
+    <footer>
+        <p>© 2026 Smart Rail Booking System -- Developed by Badrinath Gore</p>
+    </footer>
+
+    <div class="modal" id="modal">
+        <span class="close" id="close">&times;</span>
+        <img id="modalImg">
+    </div>
+
+    <script>
+        const modal = document.getElementById("modal");
+        const modalImg = document.getElementById("modalImg");
+
+        document.querySelectorAll(".gallery img").forEach(img => {
+            img.onclick = () => {
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+            }
+        });
+
+        document.getElementById("close").onclick = () => {
+            modal.style.display = "none";
+        }
+
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
